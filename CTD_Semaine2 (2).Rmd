@@ -292,8 +292,7 @@ legend("topright",
 
 Calculez la fonction génératrice des moments de la loi $\mathcal N(0,1)$. On rappelle que la densité de cette loi est donnée par la courbe de Gauss
 
-$$f(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2} \, , \quad x \in \mathbb{R}$$
-**Indication** : On utilise l'identité remarquable $x^2 - 2xt = (x-t)^2 - t^2$.
+$$f(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2} \, , \quad x \in \mathbb{R}$$ **Indication** : On utilise l'identité remarquable $x^2 - 2xt = (x-t)^2 - t^2$.
 
 **Réponse.** La réponse peut être rédigée sur une feuille de papier libre. On ne donnera que le résultat.
 
@@ -365,14 +364,12 @@ Déterminez la fonction de répartition de la loi de $X$. En déduire la valeur 
 
 **Réponse.**
 
-$$$$
-\[F_X(x) = P(X\leq x)=\]\begin{cases}
+$$F_X(x)\\ = P(X\leq x)=\\\\begin{cases}
 0 & \text{si } x < 0, \\
 \frac{x}{2} & \text{si } 0 \leq x < 1, \\
 1 & \text{si } x \geq 1.
-\end{cases}
-\[F_X(x)=\frac{1}{2} \Rightarrow x=1\]\ 
-$$$$
+\end{cases}\\
+F_X(x)=\frac{1}{2} \Rightarrow x=1\ $$
 
 ### Question 2
 
@@ -382,7 +379,7 @@ $$$$
 
 3.  Évaluez la valeur moyenne du gain arrondie à deux décimales.
 
-**Réponse.** 1.**On simule n lancés de pièces pour chaque tirage en choisissant de manère équiprobable entre ("Pile","Face"), si le résultat est 0 on simule une loi uniforme sur (0,1), sinon on chosit directement 1**
+**Réponse.** 1.**On simule n lancés de pièces pour chaque tirage en choisissant de manière équiprobable entre ("Pile","Face"), si le résultat est 0 on simule une loi uniforme sur (0,1), sinon on chosit directement 1**
 
 ```{r, eval = TRUE}
 # remplacer eval = FALSE par eval = TRUE
@@ -404,14 +401,17 @@ round(mean(x), 2)
 
 Calculez l'espérance de $X$.
 
-**Réponse.**
+**Réponse. Il nous faut calculer l'espérance en distinguant les deux cas ( pile ou face ), nous allons pour çela utiliser les probabilités conditionnelles, nous conaissons ensuite l'esperance de la loi uniforme sur (0,1) puis celle de la loi 1. Il suffit ensuite des les multiplier par la probabilité de tomber sur pile ou sur face (1/2).On obtient bien le résultat trouvé empiriquement.**
+
+$
+E[X]=E[X/pile]\times E[pile] + E[X/face]E[face]=\frac{1}{2}\times\frac{1}{2}+\frac{1}{2}\times 1=\frac{3}{4}
+$
 
 ## Exercice 5 (facultatif)
 
 On considére la variable aléatoire définie de la manière suivante
 
-$$X = 1_{(U\leq 1/3)} V + 1_{(U>2/3)} (1+V) \, ,$$
-pour $U,V$ deux variables indépendantes de loi uniforme $\mathcal{U}(0,1)$.
+$$X = 1_{(U\leq 1/3)} V + 1_{(U>2/3)} (1+V) \, ,$$ pour $U,V$ deux variables indépendantes de loi uniforme $\mathcal{U}(0,1)$.
 
 ### Question 1
 
